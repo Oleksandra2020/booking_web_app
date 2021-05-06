@@ -1,0 +1,13 @@
+.headline_small{
+    margin-top: 50px;
+
+    color: #2C2E7F;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.city_selector{
+    margin: 60px 0 0 0 !important;
+}
