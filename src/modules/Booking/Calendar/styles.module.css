@@ -26,9 +26,6 @@
     flex: 1 0;
 }
 
-.calendar .calendar__row:nth-child(2) li:not(:last-child){
-
-}
 
 .calendar__row:last-child li:last-child {
     flex: 1 0;
