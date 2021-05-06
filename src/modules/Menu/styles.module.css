@@ -1,0 +1,20 @@
+.menu{
+    height: 100vh;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    background-color: #2C2E7F;
+    color: white;
+}
+
+.list {
+    margin: 40px 0 0 0;
+    padding: 0 25px;
+
+    font-size: 24px;
+    list-style: none;
+}
+
+.list__item{
+    margin-top: 20px;
+}
