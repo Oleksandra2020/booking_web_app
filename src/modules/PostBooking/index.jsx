@@ -2,7 +2,7 @@ import {
   Card,
   Typography,
   CardContent,
-  // CardMedia,
+  CardMedia,
   Grid,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -24,13 +24,13 @@ function PostBooking() {
 
   return (
     <div>
-      <Grid>
+      <Grid container spacing={0} alignItems="center" direction="column">
         <Card className={classes.root}>
-          {/* <CardMedia
+          <CardMedia
             className={classes.media}
             image="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png"
             title="QR code"
-          /> */}
+          />
           <CardContent>
             <Typography variant="h5" component="h3">
               Іванов Іван
@@ -42,11 +42,11 @@ function PostBooking() {
           </CardContent>
         </Card>
         <Card className={classes.root}>
-          {/* <CardMedia
+          <CardMedia
             className={classes.media}
             image="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png"
             title="QR code"
-          /> */}
+          />
           <CardContent>
             <Typography variant="h5" component="h3">
               Іванова Іванна

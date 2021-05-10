@@ -1,10 +1,4 @@
-import {
-  Card,
-  Typography,
-  CardContent,
-  // CardMedia,
-  Grid,
-} from "@material-ui/core";
+import { Card, Typography, CardContent, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
@@ -24,7 +18,7 @@ function Basket() {
 
   return (
     <div>
-      <Grid>
+      <Grid container spacing={0} alignItems="center" direction="column">
         <Card className={classes.root}>
           <CardContent>
             <Typography variant="body3" component="h4">

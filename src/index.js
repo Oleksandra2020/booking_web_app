@@ -7,12 +7,14 @@ import "./index.css";
 // import BookingView from "./views/BookingView";
 // import Menu from "./modules/Menu/index";
 // import PostBookingView from "./views/PostBookingView";
-import BasketView from "./views/BasketView";
+// import BasketView from "./views/BasketView";
+import OrderingView from "./views/OrderingView";
 
 ReactDOM.render(
   // <BookingView />,
   // <PostBookingView />,
-  <BasketView />,
+  // <BasketView />,
+  <OrderingView />,
   // eslint-disable-next-line no-undef
   document.getElementById("root")
 );
