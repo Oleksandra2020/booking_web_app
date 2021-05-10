@@ -1,6 +1,13 @@
-import { Card, Typography, CardContent, Grid } from "@material-ui/core";
+import {
+  Card,
+  Typography,
+  CardContent,
+  // CardMedia,
+  Grid,
+} from "@material-ui/core";
+import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import Content from "./Content";
+// import styles from "./styles.module.css";
 
 const useStyles = makeStyles({
   root: {
@@ -14,29 +21,31 @@ const useStyles = makeStyles({
   },
 });
 
-function Basket() {
+function OrderingCard({ name, place, trainNumber }) {
   const classes = useStyles();
 
   return (
     <div>
-      <Grid container spacing={0} alignItems="center" direction="column">
+      <Grid>
         <Card className={classes.root}>
           <CardContent>
             <Typography variant="body3" component="h4">
-              142П
-            </Typography>
-            <Typography variant="body3" component="h4">
-              142П Бахмут-Львів
+              {name}
             </Typography>
             <Typography variant="body2" component="p" className={classes.text}>
-              Пн, 24.02 13:34
+              Вагон: {trainNumber} Місце: {place}
             </Typography>
           </CardContent>
         </Card>
-        <Content />
       </Grid>
     </div>
   );
 }
 
-export default Basket;
+OrderingCard.propTypes = {
+  trainNumber: PropTypes.string.isRequired,
+  place: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};
+
+export default OrderingCard;

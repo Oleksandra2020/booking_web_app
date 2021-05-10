@@ -13,6 +13,7 @@
 }
 
 .summ{
+    margin-top: 5px;
     display: flex;
     justify-content: right;
     font-weight: 400;
@@ -21,7 +22,9 @@
 
 .note{
     display: flex;
-    justify-content: right;
+    justify-content: center;
+    width: 100%;
+    margin-right: 0;
     font-weight: 200;
     font-size: 15px;
     color: rgb(63, 67, 71);

@@ -1,11 +1,6 @@
-import {
-  Card,
-  Typography,
-  CardContent,
-  CardMedia,
-  Grid,
-} from "@material-ui/core";
+import { Card, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import Content from "./Content/index";
 
 const useStyles = makeStyles({
   root: {
@@ -26,36 +21,7 @@ function PostBooking() {
     <div>
       <Grid container spacing={0} alignItems="center" direction="column">
         <Card className={classes.root}>
-          <CardMedia
-            className={classes.media}
-            image="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png"
-            title="QR code"
-          />
-          <CardContent>
-            <Typography variant="h5" component="h3">
-              Іванов Іван
-            </Typography>
-            <Typography variant="body3">142П Бахмут-Львів</Typography>
-            <Typography variant="body2" component="p" className={classes.text}>
-              Пн, 24.02 13:34 Вагон: 2 Місце: 41
-            </Typography>
-          </CardContent>
-        </Card>
-        <Card className={classes.root}>
-          <CardMedia
-            className={classes.media}
-            image="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png"
-            title="QR code"
-          />
-          <CardContent>
-            <Typography variant="h5" component="h3">
-              Іванова Іванна
-            </Typography>
-            <Typography variant="body3">142П Бахмут-Львів</Typography>
-            <Typography variant="body2" component="p" className={classes.text}>
-              Пн, 24.02 13:34 Вагон: 2 Місце: 42
-            </Typography>
-          </CardContent>
+          <Content />
         </Card>
       </Grid>
     </div>

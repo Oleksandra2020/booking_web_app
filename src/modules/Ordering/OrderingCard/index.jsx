@@ -1,15 +1,8 @@
-import {
-  Card,
-  Typography,
-  CardContent,
-  // CardMedia,
-  Grid,
-} from "@material-ui/core";
+import { Card, Typography, CardContent, Grid } from "@material-ui/core";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import styles from "./styles.module.css";
 import Switch from "../../Switch/index";
-import RoundCheckBox from "../../RoundCheckBox/index";
 import NameInput from "../NameInput/index";
 import SurnameInput from "../SurnameInput/index";
 
@@ -49,11 +42,11 @@ function OrderingCard({ trainNumber, place, price }) {
               Плацкарт
             </Typography>
             <div className={styles.checkBox_elem}>
-              <RoundCheckBox />
+              <Switch />
               <span className={styles.checkBox__text}>Без напою</span>
-              <RoundCheckBox />
+              <Switch />
               <span className={styles.checkBox__text}>1 чай</span>
-              <RoundCheckBox />
+              <Switch />
               <span className={styles.checkBox__text}>2 чая</span>
             </div>
             <div className={styles.checkBox_elem}>
@@ -65,15 +58,15 @@ function OrderingCard({ trainNumber, place, price }) {
             </div>
             <NameInput />
             <div className={styles.checkBox_elem}>
-              <RoundCheckBox />
+              <Switch />
               <span className={styles.checkBox__text}>Без пільг</span>
-              <RoundCheckBox />
+              <Switch />
               <span className={styles.checkBox__text}>Пільговий</span>
             </div>
             <div className={styles.checkBox_elem}>
-              <RoundCheckBox />
+              <Switch />
               <span className={styles.checkBox__text}>Студентський</span>
-              <RoundCheckBox />
+              <Switch />
               <span className={styles.checkBox__text}>Дитячий</span>
             </div>
             <h1 className={styles.summ}>Ціна: {price}</h1>
