@@ -5,7 +5,9 @@ import Basket from "../../modules/Basket/index";
 import styles from "./styles.module.css";
 
 const BasketView = () => (
-  <Container>
+  <Container
+    style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}
+  >
     <Header />
     <Row className={styles.input__container}>
       <Col>

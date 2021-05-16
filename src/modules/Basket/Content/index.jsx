@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Grid } from "@material-ui/core";
+import { Card, Container, Row, Col } from "react-bootstrap";
 import OrderingCard from "../OrderingCard/index";
 
 const initState = [
@@ -21,15 +21,24 @@ const Content = () => {
   return (
     <>
       <div>
-        <Grid container spacing={0} alignItems="center" direction="column">
-          {items.map((item) => (
-            <OrderingCard
-              trainNumber={item.trainNumber}
-              place={item.place}
-              name={item.name}
-            />
-          ))}
-        </Grid>
+        <Card className="card border-light bg-light mb-3">
+          <Container>
+            <Row>
+              <Col>
+                {items.map((item) => (
+                  <OrderingCard
+                    trainNumber={item.trainNumber}
+                    place={item.place}
+                    name={item.name}
+                  />
+                ))}
+              </Col>
+            </Row>
+          </Container>
+        </Card>
+        {/* <Grid container spacing={0} alignItems="center" direction="column"> */}
+
+        {/* </Grid> */}
       </div>
     </>
   );

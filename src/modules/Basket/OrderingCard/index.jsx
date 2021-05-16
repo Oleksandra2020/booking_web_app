@@ -1,43 +1,21 @@
-import {
-  Card,
-  Typography,
-  CardContent,
-  // CardMedia,
-  Grid,
-} from "@material-ui/core";
+import { Card, Container, Col, Row } from "react-bootstrap";
 import PropTypes from "prop-types";
-import { makeStyles } from "@material-ui/core/styles";
-// import styles from "./styles.module.css";
-
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-  },
-  text: {
-    color: "gray",
-  },
-  media: {
-    paddingTop: "80%", // 16:9
-  },
-});
 
 function OrderingCard({ name, place, trainNumber }) {
-  const classes = useStyles();
-
   return (
     <div>
-      <Grid>
-        <Card className={classes.root}>
-          <CardContent>
-            <Typography variant="body3" component="h4">
-              {name}
-            </Typography>
-            <Typography variant="body2" component="p" className={classes.text}>
-              Вагон: {trainNumber} Місце: {place}
-            </Typography>
-          </CardContent>
-        </Card>
-      </Grid>
+      <Card className="card border-light bg-light mb-3">
+        <Container>
+          <Row>
+            <Col>
+              <Card.Title>{name}</Card.Title>
+              <Card.Text class="text-muted">
+                Вагон: {trainNumber} Місце: {place}
+              </Card.Text>
+            </Col>
+          </Row>
+        </Container>
+      </Card>
     </div>
   );
 }

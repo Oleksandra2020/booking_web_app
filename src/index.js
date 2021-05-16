@@ -4,16 +4,16 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./index.css";
 
 // import Header from "./modules/Header/index";
-import BookingView from "./views/BookingView";
+// import BookingView from "./views/BookingView";
 // import Menu from "./modules/Menu/index";
 // import PostBookingView from "./views/PostBookingView";
-// import BasketView from "./views/BasketView";
+import BasketView from "./views/BasketView";
 // import OrderingView from "./views/OrderingView";
 
 ReactDOM.render(
-  <BookingView />,
+  // <BookingView />,
   // <PostBookingView />,
-  // <BasketView />,
+  <BasketView />,
   // <OrderingView />,
   // eslint-disable-next-line no-undef
   document.getElementById("root")
