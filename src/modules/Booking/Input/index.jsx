@@ -1,15 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import styles from "../../_shared/_input_styles/styles.module.css";
 
 const initCity = {
-  city: "Kiev",
+  city: "",
 };
 
 const CityInput = ({ dest }) => {
   const [city, setCity] = useState(initCity);
 
-  if (dest === "where") setCity({ city: "Lviv" });
+  useEffect(() => {
+    if (dest === "from" && city === "") {
+      // some geolocation logic
+      setCity("Kyiv");
+    }
+  });
 
   return (
     <input
