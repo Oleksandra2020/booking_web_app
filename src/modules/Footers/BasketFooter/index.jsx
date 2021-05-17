@@ -1,27 +1,29 @@
-import { Grid, List, ListItem } from "@material-ui/core";
-import Button from "@material-ui/core/Button";
+/* eslint-disable prettier/prettier */
+import { Container, Row, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import styles from "../styles.module.css";
+import main from "../../_shared/main.module.css";
 
 const BasketFooter = () => (
   <div>
-    <Grid container spacing={0} alignItems="center" direction="column">
-      <h1 className={styles.summ}>Сума: 361.74</h1>
-      <h3 className={styles.note}>
-        Зміна прізвища та імені після здійснення оплати проїзних документів буде
-        неможливою
-      </h3>
-      <List>
-        <ListItem
-          button
-          style={{ backgroundColor: "rgb(61, 2, 255)", color: "white" }}
-        >
-          <Link to="/postbooking">
-            <Button size="small">Оформити квитки</Button>
-          </Link>
-        </ListItem>
-      </List>
-    </Grid>
+    <Container style={{ padding: "0" }}>
+      <Row>
+        <h1 className={styles.summ}>
+          Сума: 361.74
+        </h1>
+      </Row>
+      <Row>
+        <h3 className={styles.note}>
+          Зміна прізвища та імені після здійснення оплати проїзних документів
+          буде неможливою
+        </h3>
+      </Row>
+      <Link to="/postbooking">
+        <Button size="lg" className={main.button} block>
+          Оформити квитки
+        </Button>
+      </Link>
+    </Container>
   </div>
 );
 

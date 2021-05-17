@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import styles from "../../_shared/_input_styles/styles.module.css";
 
-const initCity = {
-  city: "",
-};
+const initCity = "";
 
 const CityInput = ({ dest }) => {
   const [city, setCity] = useState(initCity);
@@ -22,7 +20,6 @@ const CityInput = ({ dest }) => {
       className={styles.selector}
       type="text"
       placeholder="Оберіть місто"
-      value={city}
     />
   );
 };

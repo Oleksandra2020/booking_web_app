@@ -1,6 +1,5 @@
 import { Row, Col } from "react-bootstrap";
 import styles from "../../_shared/_checkbox_styles/styles.module.css";
-
 import Switch from "../../_shared/Switch/index";
 
 const CheckBoxMenu = () => (

@@ -1,4 +1,5 @@
-import { Card, Grid } from "@material-ui/core";
+import { Card } from "@material-ui/core";
+// import { Container, Row, Col } from "react-bootstrap";
 import { makeStyles } from "@material-ui/core/styles";
 import Content from "./Content/index";
 
@@ -18,13 +19,9 @@ function PostBooking() {
   const classes = useStyles();
 
   return (
-    <div>
-      <Grid container spacing={0} alignItems="center" direction="column">
-        <Card className={classes.root}>
-          <Content />
-        </Card>
-      </Grid>
-    </div>
+    <Card className={classes.root}>
+      <Content />
+    </Card>
   );
 }
 

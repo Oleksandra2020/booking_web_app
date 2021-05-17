@@ -1,7 +1,7 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
-import button from "../../modules/_shared/button.module.css";
+import main from "../../modules/_shared/main.module.css";
 
 import Header from "../../modules/Header/index";
 import CityInput from "../../modules/Booking/Input/index";
@@ -26,15 +26,10 @@ const BookingView = () => (
       <h2 className={styles.headline_small}>Дата виїзду:</h2>
       <Calendar />
     </Row>
-    <Row className={button.button__container}>
+    <Row className={main.button__container}>
       <Col>
         <Link to="/order">
-          <Button
-            variant="primary"
-            className={styles.order_button}
-            size="lg"
-            block
-          >
+          <Button variant="primary" className={main.button} size="lg" block>
             Знайти поїзд
           </Button>
         </Link>

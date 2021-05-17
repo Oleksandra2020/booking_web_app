@@ -1,7 +1,7 @@
 import { Button, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import styles from "../styles.module.css";
-import button from "../../_shared/button.module.css";
+import main from "../../_shared/main.module.css";
 
 const PostOrderingFooter = () => (
   <div>
@@ -17,12 +17,7 @@ const PostOrderingFooter = () => (
       </Row>
       <Row>
         <Link to="/basket">
-          <Button
-            variant="primary"
-            className={button.order_button}
-            size="lg"
-            block
-          >
+          <Button variant="primary" className={main.button} size="lg" block>
             Оформити квитки
           </Button>
         </Link>
