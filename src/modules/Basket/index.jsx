@@ -4,7 +4,7 @@ import Content from "./Content";
 function Basket() {
   return (
     <div>
-      <Card className="card border-light bg-light mb-3">
+      <Card>
         <Container>
           <Row>
             <Col>

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 function OrderingCard({ name, place, trainNumber }) {
   return (
     <div>
-      <Card className="card border-light bg-light mb-3">
+      <Card>
         <Container>
           <Row>
             <Col>

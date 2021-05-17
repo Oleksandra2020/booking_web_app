@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Card, Container, Row, Col } from "react-bootstrap";
 import OrderingCard from "../OrderingCard/index";
 
 const initState = [
@@ -21,21 +20,13 @@ const Content = () => {
   return (
     <>
       <div>
-        <Card>
-          <Container>
-            <Row>
-              <Col>
-                {items.map((item) => (
-                  <OrderingCard
-                    trainNumber={item.trainNumber}
-                    place={item.place}
-                    name={item.name}
-                  />
-                ))}
-              </Col>
-            </Row>
-          </Container>
-        </Card>
+        {items.map((item) => (
+          <OrderingCard
+            trainNumber={item.trainNumber}
+            place={item.place}
+            name={item.name}
+          />
+        ))}
       </div>
     </>
   );
