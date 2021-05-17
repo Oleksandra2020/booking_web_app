@@ -1,6 +1,6 @@
 import { Card, Container, Col, Row } from "react-bootstrap";
 import PropTypes from "prop-types";
-import styles from "./styles.module.css";
+import styles from "../../_shared/_checkbox_styles/styles.module.css";
 import Switch from "../../_shared/Switch/index";
 import NameInput from "../NameInput/index";
 import SurnameInput from "../SurnameInput/index";
