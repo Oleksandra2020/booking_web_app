@@ -10,7 +10,7 @@ const useStyles = makeStyles({
     color: "gray",
   },
   media: {
-    paddingTop: "80%", // 16:9
+    paddingTop: "80%",
   },
 });
 

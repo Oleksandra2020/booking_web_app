@@ -1,9 +1,9 @@
-import { List, ListItem, Grid } from "@material-ui/core";
+import { Grid, List, ListItem } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
-import { BrowserRouter as RouterLink } from "react-router-dom";
-import styles from "./styles.module.css";
+import { Link } from "react-router-dom";
+import styles from "../styles.module.css";
 
-const Footer = () => (
+const BasketFooter = () => (
   <div>
     <Grid container spacing={0} alignItems="center" direction="column">
       <h1 className={styles.summ}>Сума: 361.74</h1>
@@ -16,13 +16,13 @@ const Footer = () => (
           button
           style={{ backgroundColor: "rgb(61, 2, 255)", color: "white" }}
         >
-          <Button component={RouterLink} to="/postbookings" size="small">
-            Оформити квитки
-          </Button>
+          <Link to="/postbooking">
+            <Button size="small">Оформити квитки</Button>
+          </Link>
         </ListItem>
       </List>
     </Grid>
   </div>
 );
 
-export default Footer;
+export default BasketFooter;

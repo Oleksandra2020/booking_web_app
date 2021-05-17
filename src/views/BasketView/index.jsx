@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
-import Footer from "../../modules/Footer";
+import BasketFooter from "../../modules/Footers/BasketFooter";
 import Header from "../../modules/Header/index";
 import Basket from "../../modules/Basket/index";
 import styles from "./styles.module.css";
@@ -13,7 +13,7 @@ const BasketView = () => (
       <Col>
         <h2 className={styles.headline}>Корзина</h2>
         <Basket />
-        <Footer />
+        <BasketFooter />
       </Col>
     </Row>
   </Container>
