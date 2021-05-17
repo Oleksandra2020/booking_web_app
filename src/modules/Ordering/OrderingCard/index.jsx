@@ -1,78 +1,84 @@
-import { Card, Typography, CardContent, Grid } from "@material-ui/core";
+import { Card, Container, Col, Row } from "react-bootstrap";
 import PropTypes from "prop-types";
-import { makeStyles } from "@material-ui/core/styles";
 import styles from "./styles.module.css";
 import Switch from "../../Switch/index";
 import NameInput from "../NameInput/index";
 import SurnameInput from "../SurnameInput/index";
 
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-  },
-  text: {
-    color: "gray",
-  },
-  media: {
-    paddingTop: "80%", // 16:9
-  },
-});
-
 function OrderingCard({ trainNumber, place, price }) {
-  const classes = useStyles();
-
   return (
     <div>
-      <Grid>
-        <Card className={classes.root}>
-          <CardContent>
-            <Typography variant="h5" component="h3">
-              142П Бахмут-Львів
-            </Typography>
-            <Typography variant="body2" component="p" className={classes.text}>
-              Київ-Пасажирський Пн, 24.02 13:34
-            </Typography>
-            <Typography variant="body2" component="p" className={classes.text}>
-              Львів Вт, 24.02 04:30
-            </Typography>
-            <Typography variant="h5" component="h3">
-              Вагон: {trainNumber} Місце: {place}
-            </Typography>
-            <Typography variant="body2" component="p" className={classes.text}>
-              Плацкарт
-            </Typography>
+      <Card className="card border-light bg-light mb-3">
+        <Container>
+          <Row>
+            <Col>
+              <Card.Title>142П Бахмут-Львів</Card.Title>
+              <Card.Text class="text-muted" style={{ margin: "2px" }}>
+                Київ-Пасажирський Пн, 24.02 13:34
+              </Card.Text>
+              <Card.Text class="text-muted">Львів Вт, 24.02 04:30</Card.Text>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Card.Text>Вагон: {trainNumber}</Card.Text>
+            </Col>
+            <Col>
+              <Card.Text>Місце: {place}</Card.Text>
+            </Col>
+          </Row>
+          <Row>
+            <Card.Text class="text-muted">Плацкарт</Card.Text>
+          </Row>
+          <Row>
             <div className={styles.checkBox_elem}>
-              <Switch />
-              <span className={styles.checkBox__text}>Без напою</span>
-              <Switch />
-              <span className={styles.checkBox__text}>1 чай</span>
-              <Switch />
-              <span className={styles.checkBox__text}>2 чая</span>
+              <Col class="md-6 col-md-offset-2">
+                <Switch />
+                <span className={styles.checkBox__text}>Без напою</span>
+              </Col>
+              <Col class="md-6 col-md-offset-2">
+                <Switch />
+                <span className={styles.checkBox__text}>1 чай</span>
+              </Col>
+              <Col class="md-6 col-md-offset-2">
+                <Switch />
+                <span className={styles.checkBox__text}>2 чая</span>
+              </Col>
             </div>
-            <div className={styles.checkBox_elem}>
+          </Row>
+          <Row>
+            <Col class="md-6 col-md-offset-2">
               <Switch />
               <span className={styles.checkBox__text}>Постільна білизна</span>
-            </div>
-            <div>
-              <SurnameInput />
-            </div>
+            </Col>
+          </Row>
+          <Row>
+            <SurnameInput />
+          </Row>
+          <Row>
             <NameInput />
-            <div className={styles.checkBox_elem}>
+          </Row>
+          <Row>
+            <Col class="md-6 col-md-offset-2">
               <Switch />
               <span className={styles.checkBox__text}>Без пільг</span>
               <Switch />
+              <span className={styles.checkBox__text}>Дитячий</span>
+            </Col>
+          </Row>
+          <Row>
+            <Col class="md-6 col-md-offset-2">
+              <Switch />
               <span className={styles.checkBox__text}>Пільговий</span>
-            </div>
-            <div className={styles.checkBox_elem}>
               <Switch />
               <span className={styles.checkBox__text}>Студентський</span>
-              <Switch />
-              <span className={styles.checkBox__text}>Дитячий</span>
-            </div>
+            </Col>
+          </Row>
+          <Row>
             <h1 className={styles.summ}>Ціна: {price}</h1>
-          </CardContent>
-        </Card>
-      </Grid>
+          </Row>
+        </Container>
+      </Card>
     </div>
   );
 }

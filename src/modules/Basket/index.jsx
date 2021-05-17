@@ -1,40 +1,21 @@
-import { Card, Typography, CardContent, Grid } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Card, Container, Row, Col } from "react-bootstrap";
 import Content from "./Content";
 
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-  },
-  text: {
-    color: "gray",
-  },
-  media: {
-    paddingTop: "80%", // 16:9
-  },
-});
-
 function Basket() {
-  const classes = useStyles();
-
   return (
     <div>
-      <Grid container spacing={0} alignItems="center" direction="column">
-        <Card className={classes.root}>
-          <CardContent>
-            <Typography variant="body3" component="h4">
-              142П
-            </Typography>
-            <Typography variant="body3" component="h4">
-              142П Бахмут-Львів
-            </Typography>
-            <Typography variant="body2" component="p" className={classes.text}>
-              Пн, 24.02 13:34
-            </Typography>
-          </CardContent>
-        </Card>
+      <Card>
+        <Container>
+          <Row>
+            <Col>
+              <Card.Title>142П</Card.Title>
+              <Card.Title>142П Бахмут-Львів</Card.Title>
+              <Card.Text class="text-muted">Пн, 24.02 13:34</Card.Text>
+            </Col>
+          </Row>
+        </Container>
         <Content />
-      </Grid>
+      </Card>
     </div>
   );
 }
