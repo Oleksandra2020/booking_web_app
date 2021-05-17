@@ -13,7 +13,8 @@ import OrderingView from "./views/OrderingView";
 
 const App = () => (
   <BrowserRouter>
-    <Route component={OrderingView} exact path="/" />
+    <Route component={BookingView} exact path="/" />
+    <Route component={OrderingView} exact path="/order" />
     <Route component={BasketView} path="/basket" />
     <Route component={PostBookingView} path="/postbooking" />
   </BrowserRouter>

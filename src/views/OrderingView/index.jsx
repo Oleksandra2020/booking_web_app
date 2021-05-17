@@ -5,11 +5,11 @@ import Content from "../../modules/Ordering/Content";
 import PostOrderingFooter from "../../modules/Footers/PostOrderingFooter";
 
 const OrderingView = () => (
-  <Container>
+  <Container style={{ padding: "0" }}>
     <Header />
     <Row className={styles.input__container}>
       <Col>
-        <h2 className={styles.headline_small}>Квитки Київ - Львів</h2>
+        <h2 className={styles.headline_small}>Київ - Львів</h2>
         <h3 className={styles.headline_big}>Квитки на лютий, 24</h3>
         <Content />
         <PostOrderingFooter />
