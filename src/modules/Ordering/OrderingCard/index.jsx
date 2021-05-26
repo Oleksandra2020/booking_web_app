@@ -6,6 +6,8 @@ import NameInput from "../NameInput/index";
 import SurnameInput from "../SurnameInput/index";
 
 function OrderingCard({ trainNumber, place, price }) {
+  const name = new NameInput("");
+  const surname = new SurnameInput("");
   return (
     <Card
       className="card border-light bg-light mb-3"
@@ -54,12 +56,8 @@ function OrderingCard({ trainNumber, place, price }) {
             <span className={styles.checkBox__text}>Постільна білизна</span>
           </Col>
         </Row>
-        <Row>
-          <SurnameInput />
-        </Row>
-        <Row>
-          <NameInput />
-        </Row>
+        <Row> {name.render()} </Row>
+        <Row> {surname.render()} </Row>
         <Row>
           <Col class="md-6 col-md-offset-2">
             <Switch />
