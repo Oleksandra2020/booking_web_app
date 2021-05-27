@@ -14,10 +14,30 @@ class SurnameInput extends React.Component {
     this.setState({ value: event.target.value });
   };
 
-  handleSubmit(event) {
+  handleValidation = () => {
     const { val } = this.state;
-    alert(`A surname was submitted: ${val}`);
+    let formIsValid = true;
+
+    if (!val) {
+      formIsValid = false;
+    }
+
+    if (typeof val !== "undefined") {
+      if (!val.match(/^[a-zA-Z]+$/)) {
+        formIsValid = false;
+      }
+    }
+    return formIsValid;
+  };
+
+  handleSubmit(event) {
     event.preventDefault();
+
+    if (this.handleValidation()) {
+      alert("Form submitted");
+    } else {
+      alert("Form has errors.");
+    }
   }
 
   render() {
