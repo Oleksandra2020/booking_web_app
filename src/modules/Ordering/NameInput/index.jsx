@@ -18,7 +18,7 @@ class NameInput extends React.Component {
     const { val } = this.state;
     let formIsValid = true;
 
-    if (!val) {
+    if (val === "") {
       formIsValid = false;
     }
 
@@ -33,9 +33,7 @@ class NameInput extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    if (this.handleValidation()) {
-      alert("Form submitted");
-    } else {
+    if (!this.handleValidation()) {
       alert("Form has errors.");
     }
   }
