@@ -14,12 +14,23 @@ const CityInput = ({ dest }) => {
     }
   });
 
+  const handleChange = ({ target }) => {
+    const { value } = target;
+    if (dest === "from") {
+      setCity(value);
+    } else {
+      setCity(value);
+    }
+    console.log(value);
+  };
+
   return (
     <input
       id="origin_selector"
       className={styles.selector}
       type="text"
       placeholder="Оберіть місто"
+      onChange={handleChange}
     />
   );
 };

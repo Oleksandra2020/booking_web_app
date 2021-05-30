@@ -5,7 +5,7 @@ import main from "../../_shared/main.module.css";
 
 const PostOrderingFooter = () => (
   <div>
-    <Container>
+    <Container style={{ padding: "0" }}>
       <Row>
         <h1 className={styles.summ}>Сума: 361.74</h1>
       </Row>
