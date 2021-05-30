@@ -8,9 +8,11 @@ import CityInput from "../../modules/Booking/Input/index";
 import CheckBoxMenu from "../../modules/Booking/CheckBoxMenu";
 import Calendar from "../../modules/Booking/Calendar";
 
-const BookingView = (store) => {
-  const { state } = store;
-  console.log("Store\n", state.getState());
+const BookingView = (props) => {
+  // eslint-disable-next-line react/prop-types
+  const { state, dispatch } = props;
+  console.log("State\n", state);
+  console.log("Dispatch\n", dispatch);
 
   return (
     <Container>
