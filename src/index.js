@@ -57,28 +57,7 @@ const selectedTicketsReducer = (
     ],
   }, */
 
-const initialCart = [
-  {
-    trainId: "144П",
-    trainDest: "Бахмут-Львів",
-    departureTime: "Пн, 24.02, 13:34",
-    sum: 361.74,
-    tickets: [
-      {
-        carriage: 3,
-        seat: 41,
-        fullName: "Іванов Іван",
-        price: 180.87,
-      },
-      {
-        carriage: 3,
-        seat: 42,
-        fullName: "Іванова Іванна",
-        price: 180.87,
-      },
-    ],
-  },
-];
+const initialCart = [];
 const cartReducer = (cart = initialCart, action) => {
   switch (action.type) {
     case "cart/addTicket":
