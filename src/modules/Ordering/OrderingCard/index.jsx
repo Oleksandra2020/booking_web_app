@@ -17,10 +17,10 @@ function OrderingCard({ trainNumber, place, price }) {
         <Row>
           <Col>
             <Card.Title>142П Бахмут-Львів</Card.Title>
-            <Card.Text class="text-muted" style={{ margin: "2px" }}>
+            <Card.Text className="text-muted" style={{ margin: "2px" }}>
               Київ-Пасажирський Пн, 24.02 13:34
             </Card.Text>
-            <Card.Text class="text-muted">Львів Вт, 24.02 04:30</Card.Text>
+            <Card.Text className="text-muted">Львів Вт, 24.02 04:30</Card.Text>
           </Col>
         </Row>
         <Row>
@@ -32,26 +32,26 @@ function OrderingCard({ trainNumber, place, price }) {
           </Col>
         </Row>
         <Row>
-          <Card.Text class="text-muted">Плацкарт</Card.Text>
+          <Card.Text className="text-muted">Плацкарт</Card.Text>
         </Row>
         <Row>
           <div className={styles.checkBox_elem}>
-            <Col class="md-6 col-md-offset-2">
+            <Col className="md-6 col-md-offset-2">
               <Switch />
               <span className={styles.checkBox__text}>Без напою</span>
             </Col>
-            <Col class="md-6 col-md-offset-2">
+            <Col className="md-6 col-md-offset-2">
               <Switch />
               <span className={styles.checkBox__text}>1 чай</span>
             </Col>
-            <Col class="md-6 col-md-offset-2">
+            <Col className="md-6 col-md-offset-2">
               <Switch />
               <span className={styles.checkBox__text}>2 чая</span>
             </Col>
           </div>
         </Row>
         <Row>
-          <Col class="md-6 col-md-offset-2">
+          <Col className="md-6 col-md-offset-2">
             <Switch />
             <span className={styles.checkBox__text}>Постільна білизна</span>
           </Col>
@@ -59,7 +59,7 @@ function OrderingCard({ trainNumber, place, price }) {
         <Row> {name.render()} </Row>
         <Row> {surname.render()} </Row>
         <Row>
-          <Col class="md-6 col-md-offset-2">
+          <Col className="md-6 col-md-offset-2">
             <Switch />
             <span className={styles.checkBox__text}>Без пільг</span>
             <Switch />
@@ -67,7 +67,7 @@ function OrderingCard({ trainNumber, place, price }) {
           </Col>
         </Row>
         <Row>
-          <Col class="md-6 col-md-offset-2">
+          <Col className="md-6 col-md-offset-2">
             <Switch />
             <span className={styles.checkBox__text}>Пільговий</span>
             <Switch />

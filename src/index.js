@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route } from "react-router-dom";
 import { createStore, combineReducers } from "redux";
+import { Provider } from "react-redux";
 import "bootstrap/dist/css/bootstrap.css";
 import "./index.css";
 
@@ -35,7 +36,49 @@ const selectedTicketsReducer = (
   }
 };
 
-const initialCart = [];
+/* {
+    trainId: "144П",
+    trainDest: "Бахмут-Львів",
+    departureTime: "Пн, 24.02, 13:34",
+    sum: 361.74,
+    tickets: [
+      {
+        carriage: 3,
+        seat: 41,
+        fullName: "Іванов Іван",
+        price: 180.87
+      },
+      {
+        carriage: 3,
+        seat: 42,
+        fullName: "Іванова Іванна",
+        price: 180.87
+      },
+    ],
+  }, */
+
+const initialCart = [
+  {
+    trainId: "144П",
+    trainDest: "Бахмут-Львів",
+    departureTime: "Пн, 24.02, 13:34",
+    sum: 361.74,
+    tickets: [
+      {
+        carriage: 3,
+        seat: 41,
+        fullName: "Іванов Іван",
+        price: 180.87,
+      },
+      {
+        carriage: 3,
+        seat: 42,
+        fullName: "Іванова Іванна",
+        price: 180.87,
+      },
+    ],
+  },
+];
 const cartReducer = (cart = initialCart, action) => {
   switch (action.type) {
     case "cart/addTicket":
@@ -68,7 +111,7 @@ const searchReducer = (search = initialSearch, action) => {
 const store = createStore(
   combineReducers({
     selectedTickets: selectedTicketsReducer,
-    ticketsInCart: cartReducer,
+    cart: cartReducer,
     allTickets: allTicketsReducer,
     search: searchReducer,
   })
@@ -76,17 +119,21 @@ const store = createStore(
 
 const App = () => (
   <BrowserRouter>
-    <Route
-      exact
-      path="/"
-      render={() => (
-        <BookingView state={store.getState()} dispatch={store.dispatch} />
-      )}
-    />
-    <Route component={OrderingView} exact path="/order" state={store} />
-    <Route component={BasketView} path="/basket" state={store} />
-    <Route component={PostBookingView} path="/postbooking" state={store} />
+    <Route component={BookingView} exact path="/" />
+    <Route component={OrderingView} exact path="/order" />
+    <Route component={BasketView} exact path="/basket" />
+    <Route component={PostBookingView} exact path="/postbooking" />
   </BrowserRouter>
 );
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const render = () => {
+  ReactDOM.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.getElementById("root")
+  );
+};
+render();
+
+store.subscribe(render);

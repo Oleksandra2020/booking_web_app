@@ -1,35 +1,25 @@
-import React, { useState } from "react";
+/* eslint-disable react/prop-types */
+import React from "react";
+import PropTypes from "prop-types";
 import OrderingCard from "../OrderingCard/index";
 
-const initState = [
-  {
-    trainNumber: "3",
-    place: "41",
-    name: "Іванов Іван",
-  },
-  {
-    trainNumber: "3",
-    place: "42",
-    name: "Іванова Іванна",
-  },
-];
+const Content = ({ tickets, train }) => {
+  const ticketsCards = tickets.map((ticket) => (
+    <li key={`${ticket.carriage}-${ticket.seat}-${train}`}>
+      <OrderingCard
+        trainNumber={ticket.carriage}
+        place={ticket.seat}
+        name={ticket.fullName}
+      />
+    </li>
+  ));
 
-const Content = () => {
-  const [items] = useState(initState);
+  return <ul style={{ margin: "0", padding: "0" }}>{ticketsCards}</ul>;
+};
 
-  return (
-    <>
-      <div>
-        {items.map((item) => (
-          <OrderingCard
-            trainNumber={item.trainNumber}
-            place={item.place}
-            name={item.name}
-          />
-        ))}
-      </div>
-    </>
-  );
+Content.propTypes = {
+  tickets: PropTypes.arrayOf(PropTypes.object).isRequired,
+  train: PropTypes.string.isRequired,
 };
 
 export default Content;

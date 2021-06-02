@@ -1,15 +1,24 @@
 /* eslint-disable prettier/prettier */
 import { Container, Row, Button } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styles from "../styles.module.css";
 import main from "../../_shared/main.module.css";
 
-const BasketFooter = () => (
+const BasketFooter = () => {
+  const cart = useSelector((state) => state.cart);
+
+  let total = 0;
+  cart.forEach(element => {
+    total += element.sum;
+  });
+
+  return (
   <div>
     <Container style={{ padding: "0" }}>
       <Row>
         <h1 className={styles.summ}>
-          Сума: 361.74
+          Сума: {total}
         </h1>
       </Row>
       <Row>
@@ -26,5 +35,6 @@ const BasketFooter = () => (
     </Container>
   </div>
 );
+}
 
 export default BasketFooter;

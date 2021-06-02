@@ -1,15 +1,33 @@
 import { Card, Container, Row, Col } from "react-bootstrap";
+import { useSelector } from "react-redux";
+// import { CropRotate } from "@material-ui/icons";
 import main from "../_shared/main.module.css";
 import Content from "./Content";
 
-// const cardPaddings = {
-//   margin: "50px 0 0 0",
-//   padding: ""
-// }
+/* {
+    trainId: "144П",
+    trainDest: "Бахмут-Львів",
+    departureTime: "Пн, 24.02, 13:34",
+    tickets: [
+      {
+        carriage: 3,
+        seat: 41,
+        fullName: "Іванов Іван",
+      },
+      {
+        carriage: 3,
+        seat: 42,
+        fullName: "Іванова Іванна",
+      },
+    ],
+  },
+ */
 
 function Basket() {
-  return (
-    <div>
+  const cart = useSelector((state) => state.cart);
+
+  const cards = cart.map((element, index) => (
+    <li key={`card_${index + 1}`}>
       <Card style={{ margin: "50px 0 0 0", padding: "30px 0 0 0" }}>
         <Container>
           <Row>
@@ -18,20 +36,38 @@ function Basket() {
                 className={main.header_2_bold_left}
                 style={{ margin: "0 0 20px 0" }}
               >
-                142П Бахмут-Львів
+                {`${element.trainId} ${element.trainDest}`}
               </Card.Title>
               <Card.Text
                 className={main.plain_text_bold}
                 style={{ margin: "0 0 20px 0", color: "#828282" }}
               >
-                Пн, 24.02 13:34
+                {element.departureTime}
               </Card.Text>
             </Col>
           </Row>
         </Container>
-        <Content />
+        <Content tickets={element.tickets} train={element.trainId} />
       </Card>
-    </div>
+    </li>
+  ));
+
+  return (
+    <>
+      {cart.length === 0 ? (
+        <p
+          style={{
+            margin: "0",
+            padding: "30px 0 0 0",
+            textAlign: "center",
+          }}
+        >
+          Ваша корзина пуста
+        </p>
+      ) : (
+        <ul style={{ margin: "0", padding: "0" }}>{cards}</ul>
+      )}
+    </>
   );
 }
 

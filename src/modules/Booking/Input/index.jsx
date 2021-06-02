@@ -26,7 +26,6 @@ const CityInput = ({ dest }) => {
 
   return (
     <input
-      id="origin_selector"
       className={styles.selector}
       type="text"
       placeholder="Оберіть місто"
