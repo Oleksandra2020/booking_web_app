@@ -23,7 +23,36 @@ import OrderingView from "./views/OrderingView";
 //   },
 // };
 
-const initialSelectedTickets = [];
+/* {
+      trainId: "144П",
+      trainDest: "Бахмут-Львів",
+      departureTime: "Пн, 24.02, 13:34",
+      carriage: 3,
+      seat: 41,
+      fullName: "Іванов Іван",
+      price: 180.87
+    },
+    {
+      trainId: "144П",
+      trainDest: "Бахмут-Львів",
+      departureTime: "Пн, 24.02, 13:34",
+      carriage: 3,
+      seat: 42,
+      fullName: "Іванова Іванна",
+      price: 180.87
+      },
+*/
+const initialSelectedTickets = [
+  {
+    trainId: "144П",
+    trainDest: "Бахмут-Львів",
+    departureTime: "Пн, 24.02, 13:34",
+    carriage: 3,
+    seat: 42,
+    fullName: "Іванова Іванна",
+    price: 180.87,
+  },
+];
 const selectedTicketsReducer = (
   selectedTickets = initialSelectedTickets,
   action
@@ -31,6 +60,19 @@ const selectedTicketsReducer = (
   switch (action.type) {
     case "selectedTickets/addTicket":
       return [...selectedTickets, action.payload];
+    case "selectedTickets/removeTicket":
+      return selectedTickets.filter(
+        (ticket, index) => index !== action.payload.id
+      );
+    case "selectedTickets/setName":
+      return selectedTickets.map((ticket, index) => {
+        if (index === action.payload.id)
+          return {
+            ...ticket,
+            fullName: action.payload.fullName,
+          };
+        return ticket;
+      });
     default:
       return selectedTickets;
   }

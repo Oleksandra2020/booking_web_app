@@ -1,32 +1,46 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import OrderingCard from "../OrderingCard/index";
 
-const initState = [
-  {
-    trainNumber: "3",
-    place: "41",
-    price: "180.87",
-  },
-  {
-    trainNumber: "3",
-    place: "42",
-    price: "180.87",
-  },
-];
+/* {
+      trainId: "144П",
+      trainDest: "Бахмут-Львів",
+      departureTime: "Пн, 24.02, 13:34",
+      carriage: 3,
+      seat: 41,
+      fullName: "Іванов Іван",
+      price: 180.87
+    },
+    {
+      trainId: "144П",
+      trainDest: "Бахмут-Львів",
+      departureTime: "Пн, 24.02, 13:34",
+      carriage: 3,
+      seat: 42,
+      fullName: "Іванова Іванна",
+      price: 180.87
+      },
+*/
 
 const Content = () => {
-  const [items] = useState(initState);
+  const selectedTickets = useSelector((state) => state.selectedTickets);
 
   return (
-    <div style={{ margin: "40px 0 0 0" }}>
-      {items.map((item) => (
-        <OrderingCard
-          trainNumber={item.trainNumber}
-          place={item.place}
-          price={item.price}
-        />
-      ))}
-    </div>
+    <ul style={{ margin: "40px 0 0 0", padding: "0", listStyle: "none" }}>
+      {selectedTickets &&
+        selectedTickets.map((ticket, index) => (
+          <li
+            key={`OrderingCard-${selectedTickets.trainId}-${ticket.carriage}-${ticket.seat}`}
+          >
+            <OrderingCard
+              trainNumber={selectedTickets.trainId}
+              place={ticket.place}
+              price={ticket.price}
+              ticketId={index}
+            />
+          </li>
+        ))}
+    </ul>
   );
 };
 

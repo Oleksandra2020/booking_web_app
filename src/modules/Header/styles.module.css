@@ -12,3 +12,26 @@
 
     color: #2C2E7F;
 }
+
+.cart{
+    position: relative;
+}
+
+.cart__amount{
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-50%, 100%);
+
+    width: 15px;
+    height: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #fff;
+    background-color: #80DBFA;
+    border-radius: 50%;
+    font-size: 12px;
+}

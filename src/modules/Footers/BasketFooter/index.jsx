@@ -10,7 +10,7 @@ const BasketFooter = () => {
 
   let total = 0;
   cart.forEach(element => {
-    total += element.sum;
+    total += element.price;
   });
 
   return (
