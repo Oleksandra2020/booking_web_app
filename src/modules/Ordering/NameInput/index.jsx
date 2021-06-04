@@ -1,4 +1,5 @@
 import React from "react";
+// import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 
 class NameInput extends React.Component {
@@ -42,6 +43,8 @@ class NameInput extends React.Component {
     const { value: propValue } = this.props;
     const { value: stateValue } = this.state;
     const value = this.isUpdatedByChange ? propValue : stateValue;
+    // const cart = useSelector((state) => state.cart);
+
     return (
       <form onSubmit={this.handleSubmit}>
         <label>

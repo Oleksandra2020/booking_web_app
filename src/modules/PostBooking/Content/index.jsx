@@ -1,30 +1,18 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import OrderingCard from "../OrderingCard/index";
 
-const initState = [
-  {
-    trainNumber: "3",
-    place: "41",
-    name: "Іванов Іван",
-  },
-  {
-    trainNumber: "3",
-    place: "42",
-    name: "Іванова Іванна",
-  },
-];
-
 const Content = () => {
-  const [items] = useState(initState);
+  const cart = useSelector((state) => state.cart);
 
   return (
     <>
       <div>
-        {items.map((item) => (
+        {cart.map((item) => (
           <OrderingCard
             trainNumber={item.trainNumber}
-            place={item.place}
-            name={item.name}
+            place={item.seat}
+            name={item.fullName}
           />
         ))}
       </div>
