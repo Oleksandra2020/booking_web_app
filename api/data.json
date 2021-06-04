@@ -1,0 +1,170 @@
+{
+    "tickets" : [
+        {
+        "id" : 0,
+        "trainId" : "144P",
+        "trainName" : "Bachmyt - Lviv",
+        "trainCities" : ["Bachmyt", "Kharkiv-Pas.", "Kyiv-Pas.", "Lviv"],
+        "trainStops" : [
+            {
+                "city" : "Bachmyt",
+                "arrives" : null,
+                "departure" : "2021-06-05T23:25:00.000Z"
+            },
+            {
+                "city" : "Kharkiv-Pas.",
+                "arrives" : "2021-06-06T03:52:00.000Z",
+                "departure" : "2021-06-06T04:17:00.000Z"
+            },
+            {
+                "city" : "Kyiv-Pas.",
+                "arrives" : "2021-06-06T13:09:00.000Z",
+                "departure" : "2021-06-06T13:34:00.000Z"
+            },
+            {
+                "city" : "Lviv",
+                "arrives" : "2021-06-07T04:32:00.000Z",
+                "departure" : null
+            }
+        ],
+        "seatsInCarriage" : [56, 56, 56, 56, 56],
+        "carriageClass" : ["P", "P", "P", "K", "K"],
+        "trainSeats" : [[2], [6, 32, 33, 34, 48, 49, 54], [], [1, 2, 3, 4, 6, 12, 13, 44, 45, 46, 47 , 52, 53, 54], [2, 10, 12, 14, 28, 29, 45, 46, 50], []]
+    },
+    {
+        "id" : 1,
+        "trainId" : "144P",
+        "trainName" : "Bachmyt - Lviv",
+        "trainCities" : ["Bachmyt", "Kharkiv-Pas.", "Kyiv-Pas.", "Lviv"],
+        "trainStops" : [
+            {
+                "city" : "Bachmyt",
+                "arrives" : null,
+                "departure" : "2021-06-06T23:25:00.000Z"
+            },
+            {
+                "city" : "Kharkiv-Pas.",
+                "arrives" : "2021-06-07T03:52:00.000Z",
+                "departure" : "2021-06-07T04:17:00.000Z"
+            },
+            {
+                "city" : "Kyiv-Pas.",
+                "arrives" : "2021-06-07T13:09:00.000Z",
+                "departure" : "2021-06-07T13:34:00.000Z"
+            },
+            {
+                "city" : "Lviv",
+                "arrives" : "2021-06-08T04:32:00.000Z",
+                "departure" : null
+            }
+        ],
+        "seatsInCarriage" : [56, 56, 56, 56, 56],
+        "carriageClass" : ["P", "P", "P", "K", "K"],
+        "trainSeats" : [[11, 12], [6, 32, 33, 34, 48, 49, 54], [2, 5, 43], [1, 2, 3, 4, 10, 12, 13, 44, 45, 46, 47 , 52, 53, 54], [2, 10, 12, 14, 28, 29, 45, 46, 50], [10, 12, 13, 44, 45, 46, 47]]
+    },
+    {
+        "id" : 2,
+        "trainId" : "144П",
+        "trainName" : "Bachmyt - Lviv",
+        "trainCities" : ["Bachmyt", "Kharkiv-Pas.", "Kyiv-Pas.", "Lviv"],
+        "trainStops" : [
+            {
+                "city" : "Bachmyt",
+                "arrives" : null,
+                "departure" : "2021-06-07T23:25:00.000Z"
+            },
+            {
+                "city" : "Kharkiv-Pas.",
+                "arrives" : "2021-06-08T03:52:00.000Z",
+                "departure" : "2021-06-08T04:17:00.000Z"
+            },
+            {
+                "city" : "Kyiv-Pas.",
+                "arrives" : "2021-06-08T13:09:00.000Z",
+                "departure" : "2021-06-08T13:34:00.000Z"
+            },
+            {
+                "city" : "Lviv",
+                "arrives" : "2021-06-09T04:32:00.000Z",
+                "departure" : null
+            }
+        ],
+        "seatsInCarriage" : [56, 56, 56, 56, 56],
+        "carriageClass" : ["П", "П", "П", "К", "К"],
+        "trainSeats" : [[11, 12, 34, 37, 38], [6, 32, 33, 54], [2, 5, 43], [1, 2,  13, 44, 45, 46, 47 , 52, 53, 54], [2, 10, 12, 14, 46, 50, 52], [1, 2, 3, 4, 10, 12, 13, 44, 45, 46, 47]]
+    },
+    {
+        "id" : 3,
+        "trainId" : "715K",
+        "trainName" : "Kyiv-Pas. - Lviv",
+        "trainCities" : ["Kyiv-Pas.", "Vinnytsa", "Khmelnytski", "Ternopil-Pas.", "Lviv"],
+        "trainStops" : [
+            {
+                "city" : "Kyiv-Pas.",
+                "arrives" : null,
+                "departure" : "2021-06-05T06:50:00.000Z"
+            },
+            {
+                "city" : "Vinnytsa",
+                "arrives" : "2021-06-05T09:09:00.000Z",
+                "departure" : "2021-06-05T09:11:00.000Z"
+            },
+            {
+                "city" : "Khmelnytski",
+                "arrives" : "2021-06-05T10:47:00.000Z",
+                "departure" : "2021-06-05T10:49:00.000Z"
+            },
+            {
+                "city" : "Ternopil-Pas.",
+                "arrives" : "2021-06-05T12:12:00.000Z",
+                "departure" : "2021-06-05T12:14:00.000Z"
+            },
+            {
+                "city" : "Lviv",
+                "arrives" : "2021-06-05T13:45:00.000Z",
+                "departure" : null
+            }
+            
+        ],
+        "seatsInCarriage" : [56, 56, 56, 81, 81],
+        "carriageClass" : ["C1", "C1", "C1", "C2", "C2"],
+        "trainSeats" : [[2], [6, 32, 33, 34, 48, 49, 54], [], [1, 2, 3, 4, 6, 12, 13, 44, 45, 46, 47 , 52, 53, 54], [2, 10, 12, 14, 28, 29, 45, 46, 50], []]
+    },
+    {
+        "id" : 4,
+        "trainId" : "715К",
+        "trainName" : "Kyiv-Pas. - Lviv",
+        "trainCities" : ["Kyiv-Pas.", "Vinnytsa", "Khmelnytski", "Ternopil-Pas.", "Lviv"],
+        "trainStops" : [
+            {
+                "city" : "Kyiv-Pas.",
+                "arrives" : null,
+                "departure" : "2021-06-06T06:50:00.000Z"
+            },
+            {
+                "city" : "Vinnytsa",
+                "arrives" : "2021-06-06T09:09:00.000Z",
+                "departure" : "2021-06-06T09:11:00.000Z"
+            },
+            {
+                "city" : "Khmelnytski",
+                "arrives" : "2021-06-06T10:47:00.000Z",
+                "departure" : "2021-06-06T10:49:00.000Z"
+            },
+            {
+                "city" : "Ternopil-Pas.",
+                "arrives" : "2021-06-06T12:12:00.000Z",
+                "departure" : "2021-06-06T12:14:00.000Z"
+            },
+            {
+                "city" : "Lviv",
+                "arrives" : "2021-06-06T13:45:00.000Z",
+                "departure" : null
+            }
+            
+        ],
+        "seatsInCarriage" : [56, 56, 56, 81, 81],
+        "carriageClass" : ["C1", "C1", "C1", "C2", "C2"],
+        "trainSeats" : [[2, 11, 12, 14, 45, 54], [6, 32, 33, 49, 54], [ 34, 48, 49, 50, 51], [1, 2, 3, 4, 6, 12, 13, 44, 45, 46, 47 , 52, 53, 54], [2, 10, 12, 14, 28, 29, 45, 46, 50], []]
+    }]
+}
