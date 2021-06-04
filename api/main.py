@@ -47,7 +47,7 @@ class LoadByDatePlace(Resource):
         date_time_str = '18/09/19 01:55:19'
         date_time_obj = datetime.strptime(date_time_str, "%d/%m/%y %H:%M:%S")
 
-api.add_resource(LoadData, "/load_all_data")
+api.add_resource(LoadAllData, "/load_all_data")
 api.add_resource(LoadSeats, '/load_seats/<id>',
                  resource_class_kwargs={'id': id})
 
