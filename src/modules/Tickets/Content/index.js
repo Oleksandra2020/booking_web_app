@@ -9,7 +9,12 @@ const Content = () => {
     <>
       <div>
         {selectedTickets.map((item) => (
-          <TicketCard trainNumber={item.trainNumber} />
+          <TicketCard
+            trainNumber={item.trainNumber}
+            from="Київ"
+            to="Львів"
+            price="180.87"
+          />
         ))}
       </div>
     </>
