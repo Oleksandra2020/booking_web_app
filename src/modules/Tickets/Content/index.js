@@ -1,18 +1,25 @@
 // import React, { useState } from "react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import TicketCard from "../TicketCard/index";
 
 const Content = () => {
-  const selectedTickets = useSelector((state) => state.selectedTickets);
+  async function getTickets() {
+    const tickets = await fetch("127.0.0.1:5001/load_all_data")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      });
+    return tickets;
+  }
 
+  const tickets = getTickets();
   return (
     <>
       <div>
-        {selectedTickets.map((item) => (
+        {tickets.map((item) => (
           <TicketCard
-            trainNumber={item.trainNumber}
-            from="Київ"
-            to="Львів"
+            trainNumber={item.trainId}
+            trainName={item.Name}
             price="180.87"
           />
         ))}
