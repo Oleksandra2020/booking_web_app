@@ -11,6 +11,7 @@ import BookingView from "./views/BookingView";
 import PostBookingView from "./views/PostBookingView";
 import BasketView from "./views/BasketView";
 import OrderingView from "./views/OrderingView";
+import TicketsView from "./views/TicketsView";
 
 // const initialStore = {
 //   selectedTickets: [],
@@ -144,6 +145,7 @@ const App = () => (
     <Route component={OrderingView} exact path="/order" />
     <Route component={BasketView} exact path="/basket" />
     <Route component={PostBookingView} exact path="/postbooking" />
+    <Route component={TicketsView} exact path="/tickets" />
   </BrowserRouter>
 );
 

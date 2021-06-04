@@ -1,0 +1,13 @@
+.input__container{
+    margin-top: 50px;  
+}
+
+.hyperlink{
+    text-align: center;
+    text-underline-position: below;
+    color: #80DBFA;
+}
+
+.calendar_row{
+    margin-top: 90px;
+}

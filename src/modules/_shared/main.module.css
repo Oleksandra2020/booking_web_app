@@ -49,6 +49,13 @@
     font-weight: 500;
 }
 
+.muted_text{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    color: gray;
+    font-weight: 50;
+}
+
 .plain_text_super_bold{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14px;

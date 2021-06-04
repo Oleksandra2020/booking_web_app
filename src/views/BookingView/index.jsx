@@ -28,7 +28,7 @@ const BookingView = () => (
     </Row>
     <Row className={main.button__container}>
       <Col>
-        <Link to="/order">
+        <Link to="/tickets">
           <Button variant="primary" className={main.button} size="lg" block>
             Знайти поїзд
           </Button>
