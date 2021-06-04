@@ -1,23 +1,21 @@
-from flask import Flask
+from flask import Flask, request
 from flask_restful import Api, Resource
+from datetime import datetime
+
 import json
-import datetime
 
 app = Flask(__name__)
-api = Api(app)
+# api = Api(app)
 
-class LoadAllData(Resource):
-    def get(self):
+@app.route("/load_all_data", methods=['GET'])
+def get_all_data():
         data = load_data()
         data = data["tickets"]
 
-        return data
+        return { "all_data" : data }
 
-class LoadSeats(Resource):
-    def __init__(self, id):
-        self.id = id
-
-    def get(self, id):
+@app.route("/load_seats/<int:id>",  methods=['GET'])
+def get_seats(id):
         data = load_data()
         data = data["tickets"]
         
@@ -28,28 +26,54 @@ class LoadSeats(Resource):
                 seats = train["trainSeats"]
                 break
             
-        return seats
+        return { "seats" : seats }
+
+@app.route("/load_data_by_date_place",  methods=['GET', 'POST'])
+def get_seats_by_date_place():
+
+    print(request.data)
+
+    body = request.get_json() # get the request body content
+    if body is None:
+        return "The request body is null", 400
+    if "departure" not in body:
+        return "You need to specify the departure",400
+    if "arrive" not in body:
+        return "You need to specify the arrive", 400
+    if "datetime" not in body:
+        return "You need to specify the datetime", 400
+
+    departure = body["departure"]
+    arrive = body["arrive"]
+    date = body["datetime"]
+    print(departure, " ", arrive, " ", date)   
         
-class LoadByDatePlace(Resource):
-    def get(self, departure, arrive, datetime):
-        data = load_data()
-        data = data["tickets"]
+    data = load_data()
+    data = data["tickets"]
 
-        ids = []
-        for train in data:
-            if(departure not in data["trainCities"]) continue
-            if(arrive not in data["trainCities"]) continue
-            if(data["trainCities"].index(departure) > data["trainCities"].index(arrive)) continue
+    ids = []
+    for train in data:
+        if(departure not in train["trainCities"]): continue
+        if(arrive not in train["trainCities"]): continue
+        if(train["trainCities"].index(departure) > train["trainCities"].index(arrive)): continue
 
-            departure_index = data["trainCities"].index(departure)
-            arrive_index = data["trainCities"].index(arrive)
+        departure_index = train["trainCities"].index(departure)
+        arrive_index = train["trainCities"].index(arrive)
 
-        date_time_str = '18/09/19 01:55:19'
-        date_time_obj = datetime.strptime(date_time_str, "%d/%m/%y %H:%M:%S")
+        departure_time = 0
+        arrive_time = 0
 
-api.add_resource(LoadAllData, "/load_all_data")
-api.add_resource(LoadSeats, '/load_seats/<id>',
-                 resource_class_kwargs={'id': id})
+        for city in train["trainStops"]:
+            if(city["city"] == departure): 
+                departure_time = datetime.strptime(city["departure"], "%d/%m/%Y %H:%M:%S")
+            if(city["city"] == arrive):
+                arrive_time = datetime.strptime(city["arrives"], "%d/%m/%Y %H:%M:%S")
+
+        print(train["id"], " ", departure_time, " ", arrive_time)
+        ids.append(train["id"])
+
+    print(ids)
+    return { "ids" : ids }
 
 def load_data():
     with open("data.json", "r") as read_file:
