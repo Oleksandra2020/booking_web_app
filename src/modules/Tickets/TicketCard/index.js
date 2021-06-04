@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import main from "../../_shared/main.module.css";
 
-function TicketCard({ from, to, price, trainNumber }) {
+function TicketCard({ trainName, price, trainNumber }) {
   return (
     <div>
       <Card>
@@ -12,7 +12,7 @@ function TicketCard({ from, to, price, trainNumber }) {
             <Col>
               <Card.Text className={main.muted_text}> 14Г. 56ХВ. </Card.Text>
               <Card.Text className={main.plain_text_super_bold}>
-                {trainNumber} Бахмут-Львів
+                {trainNumber} {trainName}
               </Card.Text>
             </Col>
           </Row>
@@ -22,13 +22,13 @@ function TicketCard({ from, to, price, trainNumber }) {
                 className={main.plain_text_bold}
                 style={{ color: "#828282" }}
               >
-                {from}
+                Київ-Пасажирський
               </Card.Text>
               <Card.Text
                 className={main.plain_text_bold}
                 style={{ color: "#828282" }}
               >
-                {to}
+                Львів
               </Card.Text>
               <Card.Text
                 className={main.muted_text}
@@ -96,8 +96,7 @@ function TicketCard({ from, to, price, trainNumber }) {
 
 TicketCard.propTypes = {
   trainNumber: PropTypes.string.isRequired,
-  from: PropTypes.string.isRequired,
-  to: PropTypes.string.isRequired,
+  trainName: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
 };
 
