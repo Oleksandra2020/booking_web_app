@@ -5,26 +5,22 @@ import PropTypes from "prop-types";
 class NameInput extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: "" };
+    this.state = { name: "" };
 
-    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange = (event) => {
-    this.setState({ value: event.target.value });
-  };
-
   handleValidation = () => {
-    const { val } = this.state;
+    const { name } = this.state;
     let formIsValid = true;
 
-    if (val === "") {
+    console.log(name);
+    if (name === "") {
       formIsValid = false;
     }
 
-    if (typeof val !== "undefined") {
-      if (!val.match(/^[a-zA-Z]+$/)) {
+    if (typeof name !== "undefined") {
+      if (!name.match(/^[a-zA-Z]+$/)) {
         formIsValid = false;
       }
     }
@@ -40,19 +36,20 @@ class NameInput extends React.Component {
   }
 
   render() {
-    const { value: propValue } = this.props;
-    const { value: stateValue } = this.state;
-    const value = this.isUpdatedByChange ? propValue : stateValue;
-    // const cart = useSelector((state) => state.cart);
-
+    const { name: propValue } = this.props;
+    const { name: stateValue } = this.state;
+    const { name } = this.isUpdatedByChange ? propValue : stateValue;
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
           Ім я:
           <input
-            type="text"
-            defaultValue={value}
-            onChange={this.handleChange}
+            type="name"
+            required
+            value={name}
+            onChange={(e) => {
+              this.state.name = e.target.value;
+            }}
           />
         </label>
         <input type="submit" value="Submit" />
@@ -62,7 +59,7 @@ class NameInput extends React.Component {
 }
 
 NameInput.propTypes = {
-  value: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default NameInput;

@@ -1,29 +1,26 @@
 import React from "react";
+// import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 
 class SurnameInput extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: "" };
+    this.state = { surname: "" };
 
-    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange = (event) => {
-    this.setState({ value: event.target.value });
-  };
-
   handleValidation = () => {
-    const { val } = this.state;
+    const { surname } = this.state;
     let formIsValid = true;
 
-    if (val === "") {
+    console.log(surname);
+    if (surname === "") {
       formIsValid = false;
     }
 
-    if (typeof val !== "undefined") {
-      if (!val.match(/^[a-zA-Z]+$/)) {
+    if (typeof surname !== "undefined") {
+      if (!surname.match(/^[a-zA-Z]+$/)) {
         formIsValid = false;
       }
     }
@@ -39,17 +36,20 @@ class SurnameInput extends React.Component {
   }
 
   render() {
-    const { value: propValue } = this.props;
-    const { value: stateValue } = this.state;
-    const value = this.isUpdatedByChange ? propValue : stateValue;
+    const { surname: propValue } = this.props;
+    const { surname: stateValue } = this.state;
+    const { surname } = this.isUpdatedByChange ? propValue : stateValue;
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
           Прізвище:
           <input
-            type="text"
-            defaultValue={value}
-            onChange={this.handleChange}
+            type="surname"
+            required
+            value={surname}
+            onChange={(e) => {
+              this.state.surname = e.target.value;
+            }}
           />
         </label>
         <input type="submit" value="Submit" />
@@ -59,7 +59,7 @@ class SurnameInput extends React.Component {
 }
 
 SurnameInput.propTypes = {
-  value: PropTypes.string.isRequired,
+  surname: PropTypes.string.isRequired,
 };
 
 export default SurnameInput;
