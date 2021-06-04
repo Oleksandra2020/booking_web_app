@@ -1,6 +1,6 @@
 from flask import Flask, request
 from flask_restful import Api, Resource
-from datetime import datetime
+from datetime import datetime, timedelta
 
 import json
 
@@ -31,8 +31,6 @@ def get_seats(id):
 @app.route("/load_data_by_date_place",  methods=['GET', 'POST'])
 def get_seats_by_date_place():
 
-    print(request.data)
-
     body = request.get_json() # get the request body content
     if body is None:
         return "The request body is null", 400
@@ -45,9 +43,7 @@ def get_seats_by_date_place():
 
     departure = body["departure"]
     arrive = body["arrive"]
-    date = body["datetime"]
-    print(departure, " ", arrive, " ", date)   
-        
+    date = datetime.strptime(body["datetime"], "%d/%m/%Y %H:%M:%S") 
     data = load_data()
     data = data["tickets"]
 
@@ -61,18 +57,15 @@ def get_seats_by_date_place():
         arrive_index = train["trainCities"].index(arrive)
 
         departure_time = 0
-        arrive_time = 0
 
         for city in train["trainStops"]:
             if(city["city"] == departure): 
                 departure_time = datetime.strptime(city["departure"], "%d/%m/%Y %H:%M:%S")
-            if(city["city"] == arrive):
-                arrive_time = datetime.strptime(city["arrives"], "%d/%m/%Y %H:%M:%S")
-
-        print(train["id"], " ", departure_time, " ", arrive_time)
+                break
+        if(departure_time == 0 or date > departure_time or departure_time > (date + timedelta(days=1))): continue
+        
         ids.append(train["id"])
 
-    print(ids)
     return { "ids" : ids }
 
 def load_data():
